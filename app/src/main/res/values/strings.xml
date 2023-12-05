@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">StayAwake</string>
+    <string name="get_started">Get Started</string>
+    <string name="terms_and_privacy">By continuing, you agree to our Terms of Service\nand Privacy Policy</string>
 </resources>
