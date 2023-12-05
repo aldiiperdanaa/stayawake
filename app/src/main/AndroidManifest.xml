@@ -21,6 +21,9 @@
         android:theme="@style/Theme.MobileStayAwake"
         tools:targetApi="31">
         <activity
+            android:name=".LoginRegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".OnboardingScreenActivity"
             android:exported="false" />
         <activity

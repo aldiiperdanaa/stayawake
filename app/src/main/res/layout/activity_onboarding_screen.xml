@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_primary"
                 android:outlineProvider="none"
-                android:text="@string/get_started"
+                android:text="@string/get_started_button"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 
