@@ -129,6 +129,60 @@
             </LinearLayout>
         </LinearLayout>
 
+        <!--    GENDER    -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_gender"
+                style="@style/TextExtraSmall_Regular"
+                android:textColor="@color/textPrimary"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_required"
+                style="@style/TextExtraSmall_Regular"
+                android:textColor="@color/negativeBase"/>
+        </LinearLayout>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <RadioButton
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:button="@android:color/transparent"
+                android:drawableStart="@drawable/radio_button_selector2"
+                android:drawablePadding="10dp"
+                android:background="@android:color/transparent"
+                android:text="Laki-laki"
+                style="@style/TextBase_Regular"
+                android:textColor="@drawable/radio_button_text_selector2"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="1dp"/>
+
+            <RadioButton
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:button="@android:color/transparent"
+                android:drawableStart="@drawable/radio_button_selector2"
+                android:drawablePadding="10dp"
+                android:background="@android:color/transparent"
+                android:text="Perempuan"
+                style="@style/TextBase_Regular"
+                android:textColor="@drawable/radio_button_text_selector2"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="1dp"/>
+
+        </RadioGroup>
+
         <!--    JOB TITLE    -->
         <TextView
             android:layout_width="wrap_content"
@@ -162,6 +216,59 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="20dp"/>
+
+        <!--    PHONE NUMBER    -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_phone_number"
+                style="@style/TextExtraSmall_Regular"
+                android:textColor="@color/textPrimary"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_required"
+                style="@style/TextExtraSmall_Regular"
+                android:textColor="@color/negativeBase"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/countryCodePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="5dp"
+                android:layout_marginLeft="-8dp"
+                android:background="@android:color/transparent"
+                app:ccp_textSize="16sp"
+                app:ccp_arrowColor="@color/textSecondary"
+                app:ccp_flagBorderColor="@color/fillPrimary"
+                app:ccp_defaultNameCode="ID"
+                app:ccp_showNameCode="false"
+                app:ccp_showFullName="false"
+                app:ccpDialog_background="@color/backgroundSecondary"
+                app:ccpDialog_initialScrollToSelection="true"
+                app:ccpDialog_showTitle="false"
+                app:ccpDialog_textColor="@color/textPrimary"
+                app:ccpDialog_searchEditTextTint="@color/fillPrimary"
+                app:ccpDialog_fastScroller_handleColor="@color/fillPrimary"
+                app:ccpDialog_showNameCode="false"/>
+            <EditText
+                android:id="@+id/phoneNumberInput"
+                style="@style/EditTextStyle"
+                android:hint="@string/hint_input_phone_number"
+                android:inputType="number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="20dp"/>
+        </LinearLayout>
 
     </LinearLayout>
 

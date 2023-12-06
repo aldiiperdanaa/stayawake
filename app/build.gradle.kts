@@ -57,5 +57,7 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:1.3.0")
     implementation("androidx.camera:camera-viewfinder:1.4.0-alpha02")
 
+    //PhoneNumber
+    implementation("com.hbb20:ccp:2.5.1")
 
 }

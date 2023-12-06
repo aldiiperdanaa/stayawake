@@ -19,4 +19,7 @@
     <string name="hint_blood_type">A/B/AB/O</string>
     <string name="label_place_of_birth">Place of Birth</string>
     <string name="hint_input_place_of_birth">Enter your place of birth</string>
+    <string name="label_phone_number">Phone Number</string>
+    <string name="hint_input_phone_number">Enter your phone number</string>
+    <string name="label_gender">Gender</string>
 </resources>
