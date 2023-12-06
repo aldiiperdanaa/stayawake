@@ -4,4 +4,6 @@
     <string name="terms_and_privacy">By continuing, you agree to our Terms of Service\nand Privacy Policy</string>
     <string name="hint_input_email">Enter your email address</string>
     <string name="continue_button">Continue</string>
+    <string name="hint_input_password">Enter your password</string>
+    <string name="login_button">Login</string>
 </resources>
