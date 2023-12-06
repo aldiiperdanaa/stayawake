@@ -22,4 +22,11 @@
     <string name="label_phone_number">Phone Number</string>
     <string name="hint_input_phone_number">Enter your phone number</string>
     <string name="label_gender">Gender</string>
+    <string name="label_company_logo">Company Logo</string>
+    <string name="label_company_name">Company Name</string>
+    <string name="hint_input_company_name">Enter your company name</string>
+    <string name="label_business_field">Business Field</string>
+    <string name="hint_input_business_field">Select your business field</string>
+    <string name="change_button">Change</string>
+    <string name="delete_button">Delete</string>
 </resources>
