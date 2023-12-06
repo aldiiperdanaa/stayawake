@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
+    android:paddingBottom="16dp"
+    android:background="@drawable/background_bottom_sheet">
+
+    <View
+        android:id="@+id/rectangle_4"
+        android:layout_width="48dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape_bottom_sheet"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TextBase_SemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Referral Code"
+        android:textColor="@color/textPrimary"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/emailInput"
+        style="@style/EditTextStyle"
+        android:drawableStart="@drawable/ic_coupon"
+        android:hint="@string/hint_input_referral_code"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TextExtraSmall_Regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:text="This code is only for joining registered companies"
+        android:textColor="@color/textSecondary"
+        app:drawableTint="@color/textSecondary"
+        app:drawableStartCompat="@drawable/ic_information_fill"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/btn_continue"
+        style="@style/TextBase_SemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_primary"
+        android:outlineProvider="none"
+        android:text="@string/verify_button"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:letterSpacing="0"
+        android:layout_marginTop="24dp"/>
+
+</LinearLayout>

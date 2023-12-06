@@ -33,4 +33,6 @@
     <string name="register_button">Register</string>
     <string name="label_password_confirmation">Password Confirmation</string>
     <string name="hint_input_password_confirmation">Enter your password confirmation</string>
+    <string name="hint_input_referral_code">Enter your referral code here</string>
+    <string name="verify_button">Verify</string>
 </resources>
