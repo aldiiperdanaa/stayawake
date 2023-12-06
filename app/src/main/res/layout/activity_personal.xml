@@ -196,7 +196,7 @@
             android:textColor="@color/textPrimary" />
         <EditText
             android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/jobTitleInput"
             style="@style/EditTextStyle"
             android:drawableStart="@drawable/ic_job"
