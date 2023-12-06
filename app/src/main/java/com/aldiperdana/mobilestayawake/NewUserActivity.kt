@@ -14,7 +14,7 @@ class NewUserActivity : AppCompatActivity() {
         val bottom_sheet: TextView = findViewById(R.id.tv_referral)
         bottom_sheet.setOnClickListener{
             val view: View = layoutInflater.inflate(R.layout.item_bottom_sheet_referral_code, null)
-            val dialog = BottomSheetDialog(this)
+            val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
             dialog.setContentView(view)
             dialog.show()
         }
