@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundSecondary"
+    tools:context=".PersonalActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--    FULL NAME    -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_full_name"
+                style="@style/TextExtraSmall_Regular"
+                android:textColor="@color/textPrimary"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_required"
+                style="@style/TextExtraSmall_Regular"
+                android:textColor="@color/negativeBase"/>
+        </LinearLayout>
+        <EditText
+            android:id="@+id/fullNameInput"
+            style="@style/EditTextStyle"
+            android:drawableStart="@drawable/ic_user"
+            android:hint="@string/hint_input_full_name"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="20dp"/>
+
+        <!--    PLACE OF BIRTH    -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_place_of_birth"
+            style="@style/TextExtraSmall_Regular"
+            android:textColor="@color/textPrimary"/>
+        <EditText
+            android:id="@+id/placeOfBirthInput"
+            style="@style/EditTextStyle"
+            android:drawableStart="@drawable/ic_place_of_birth"
+            android:hint="@string/hint_input_place_of_birth"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="20dp"/>
+
+        <!--    GRID INPUT    -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="20dp">
+
+            <!--    DATE OF BIRTH    -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_date_of_birth"
+                        style="@style/TextExtraSmall_Regular"
+                        android:textColor="@color/textPrimary"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_required"
+                        style="@style/TextExtraSmall_Regular"
+                        android:textColor="@color/negativeBase"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/dateOfBrithInput"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_calendar"
+                    android:hint="@string/hint_input_date_of_birth"
+                    android:inputType="date" />
+            </LinearLayout>
+
+            <!--    BLOOD TYPE    -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_blood_type"
+                    style="@style/TextExtraSmall_Regular"
+                    android:textColor="@color/textPrimary" />
+
+                <EditText
+                    android:id="@+id/bloodTypeInput"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_blood"
+                    android:hint="@string/hint_blood_type"
+                    android:inputType="text" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--    JOB TITLE    -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_job_title"
+            style="@style/TextExtraSmall_Regular"
+            android:textColor="@color/textPrimary" />
+        <EditText
+            android:id="@+id/jobTitleInput"
+            style="@style/EditTextStyle"
+            android:drawableStart="@drawable/ic_job"
+            android:hint="@string/hint_input_job_title"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="20dp"/>
+
+        <!--    ADDRESS    -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_address"
+            style="@style/TextExtraSmall_Regular"
+            android:textColor="@color/textPrimary" />
+        <EditText
+            android:id="@+id/addressInput"
+            style="@style/EditTextStyle"
+            android:drawableStart="@drawable/ic_home"
+            android:hint="@string/hint_input_address"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="20dp"/>
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
