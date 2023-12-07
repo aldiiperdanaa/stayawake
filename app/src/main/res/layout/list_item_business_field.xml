@@ -6,33 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
+    <RadioButton
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <TextView
-            android:id="@+id/itemBusinessField"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:padding="16dp"
-            tools:text="Example Business Field"
-            style="@style/TextBase_Regular"
-            android:textColor="@color/textPrimary"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/businessFieldRadioButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:button="@android:color/transparent"
+        tools:text="Example Business Field"
+        style="@style/TextBase_Regular"
+        android:textColor="@color/textPrimary"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:drawableEnd="@drawable/checked_selector"
+        android:drawableTint="@color/checked_color_selector"
+        android:background="@drawable/checked_bg_selector" />
 
-        <ImageView
-            android:id="@+id/passwordVisibilityToggle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_check_fill_selected"
-            android:clickable="true"
-            android:focusable="true"
-            app:tint="@color/primary60"
-            android:layout_marginEnd="16dp"/>
-    </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
