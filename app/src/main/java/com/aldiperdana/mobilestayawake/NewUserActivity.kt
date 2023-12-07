@@ -1,14 +1,17 @@
 package com.aldiperdana.mobilestayawake
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import com.aldiperdana.mobilestayawake.databinding.ActivityNewUserBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class NewUserActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityNewUserBinding
     private lateinit var radioGroup: RadioGroup
     private lateinit var personalRadioButton: RadioButton
     private lateinit var companyRadioButton: RadioButton
@@ -17,7 +20,8 @@ class NewUserActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_user)
+        binding = ActivityNewUserBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         radioGroup = findViewById(R.id.radioGroup)
         personalRadioButton = findViewById(R.id.personalRadioButton)
@@ -44,6 +48,23 @@ class NewUserActivity : AppCompatActivity() {
             val dialog = BottomSheetDialog(this, R.style.BottomSheetDialogTheme)
             dialog.setContentView(view)
             dialog.show()
+        }
+
+        binding.role.setOnCheckedChangeListener{ group, checkedId ->
+            when (checkedId) {
+                R.id.personalRadioButton -> {
+                    binding.btnGetStarted.setOnClickListener{
+                        val intent = Intent(this, PersonalActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+                R.id.companyRadioButton -> {
+                    binding.btnGetStarted.setOnClickListener{
+                        val intent = Intent(this, CompanyActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+            }
         }
     }
 }

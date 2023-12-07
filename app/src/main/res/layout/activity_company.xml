@@ -98,7 +98,7 @@
 
         <!--    COMPANY NAME    -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
@@ -115,6 +115,8 @@
                 android:textColor="@color/negativeBase"/>
         </LinearLayout>
         <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/companyNameInput"
             style="@style/EditTextStyle"
             android:drawableStart="@drawable/ic_company"
@@ -126,23 +128,26 @@
 
         <!--    BUSINESS FIELD    -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/label_business_field"
                 style="@style/TextExtraSmall_Regular"
                 android:textColor="@color/textPrimary"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/label_required"
                 style="@style/TextExtraSmall_Regular"
                 android:textColor="@color/negativeBase"/>
         </LinearLayout>
+
         <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/businessFieldInput"
             style="@style/EditTextStyle"
             android:drawableStart="@drawable/ic_business_field"
@@ -157,7 +162,7 @@
 
         <!--    PHONE NUMBER    -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
@@ -199,6 +204,8 @@
                 app:ccpDialog_fastScroller_handleColor="@color/fillPrimary"
                 app:ccpDialog_showNameCode="false"/>
             <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/phoneNumberInput"
                 style="@style/EditTextStyle"
                 android:hint="@string/hint_input_phone_number"

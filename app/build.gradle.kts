@@ -7,6 +7,9 @@ android {
     namespace = "com.aldiperdana.mobilestayawake"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding = true
+    }
     defaultConfig {
         applicationId = "com.aldiperdana.mobilestayawake"
         minSdk = 24

@@ -1,23 +1,33 @@
 package com.aldiperdana.mobilestayawake
 
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import java.util.Calendar
+import com.aldiperdana.mobilestayawake.databinding.ActivityPersonalBinding
 
 class PersonalActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityPersonalBinding
     var selectedDate: String = ""
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_personal)
+        binding = ActivityPersonalBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val dateOfBirthInput: EditText = findViewById(R.id.dateOfBrithInput)
-
         dateOfBirthInput.setOnClickListener {
             showDatePicker()
         }
+
+        binding.btnContinue.setOnClickListener{
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+        
     }
 
     private fun showDatePicker() {
