@@ -13,18 +13,20 @@ import androidx.camera.view.PreviewView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.aldiperdana.mobilestayawake.R
+import com.aldiperdana.mobilestayawake.databinding.ActivityLiveBinding
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
 class LiveActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivityLiveBinding
     private lateinit var cameraExecutor: ExecutorService
     private val CAMERA_PERMISSION_CODE = 1001
-    val previewView: PreviewView = findViewById(R.id.previewView)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_live)
+        binding = ActivityLiveBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
         cameraExecutor = Executors.newSingleThreadExecutor()
@@ -48,7 +50,7 @@ class LiveActivity : AppCompatActivity() {
                     .requireLensFacing(CameraSelector.LENS_FACING_BACK)
                     .build()
 
-                preview.setSurfaceProvider(previewView.surfaceProvider)
+                preview.setSurfaceProvider(binding.previewView.surfaceProvider)
 
                 val camera = cameraProvider.bindToLifecycle(this, cameraSelector, preview)
             } catch (e: Exception) {

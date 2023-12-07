@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.aldiperdana.mobilestayawake.databinding.ActivityOnboardingScreenBinding
+import com.aldiperdana.mobilestayawake.ui.LiveActivity
 
 class OnboardingScreenActivity : AppCompatActivity() {
     private lateinit var binding:ActivityOnboardingScreenBinding
@@ -13,7 +14,7 @@ class OnboardingScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnGetStarted.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LiveActivity::class.java)
             startActivity(intent)
         }
     }

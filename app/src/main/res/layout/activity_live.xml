@@ -52,6 +52,19 @@
         app:maxImageSize="32dp"
         />
 
+    <TextView
+        android:id="@+id/textAboveRectangularButton"
+        android:layout_width="361dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rectangularButton"
+        android:layout_alignStart="@+id/rectangularButton"
+        android:layout_alignEnd="@id/rectangularButton"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="16dp"
+        android:text="Make sure the camera is facing your face while driving"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
     <Button
         android:id="@+id/rectangularButton"
         android:layout_width="match_parent"
