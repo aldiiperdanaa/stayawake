@@ -142,7 +142,7 @@
                 style="@style/TextExtraSmall_Regular"
                 android:textColor="@color/negativeBase"/>
         </LinearLayout>
-        <TextView
+        <EditText
             android:id="@+id/businessFieldInput"
             style="@style/EditTextStyle"
             android:drawableStart="@drawable/ic_business_field"
@@ -151,7 +151,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:drawableEnd="@drawable/ic_down_fill"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            android:focusable="false"
+            android:clickable="true"/>
 
         <!--    PHONE NUMBER    -->
         <LinearLayout

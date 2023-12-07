@@ -104,7 +104,9 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_calendar"
                     android:hint="@string/hint_input_date_of_birth"
-                    android:inputType="date" />
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:clickable="true"/>
             </LinearLayout>
 
             <!--    BLOOD TYPE    -->
@@ -165,7 +167,7 @@
                 android:drawableStart="@drawable/radio_button_selector2"
                 android:drawablePadding="10dp"
                 android:background="@android:color/transparent"
-                android:text="Laki-laki"
+                android:text="Male"
                 style="@style/TextBase_Regular"
                 android:textColor="@drawable/radio_button_text_selector2"
                 android:paddingVertical="10dp"
@@ -179,7 +181,7 @@
                 android:drawableStart="@drawable/radio_button_selector2"
                 android:drawablePadding="10dp"
                 android:background="@android:color/transparent"
-                android:text="Perempuan"
+                android:text="Female"
                 style="@style/TextBase_Regular"
                 android:textColor="@drawable/radio_button_text_selector2"
                 android:paddingVertical="10dp"
