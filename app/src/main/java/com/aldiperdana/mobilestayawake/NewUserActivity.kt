@@ -50,7 +50,7 @@ class NewUserActivity : AppCompatActivity() {
             dialog.show()
         }
 
-        binding.role.setOnCheckedChangeListener{ group, checkedId ->
+        binding.radioGroup.setOnCheckedChangeListener{ group, checkedId ->
             when (checkedId) {
                 R.id.personalRadioButton -> {
                     binding.btnGetStarted.setOnClickListener{

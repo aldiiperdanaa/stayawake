@@ -4,9 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.app.DatePickerDialog
-import android.os.Bundle
 import android.widget.EditText
-import androidx.appcompat.app.AppCompatActivity
 import java.util.Calendar
 import com.aldiperdana.mobilestayawake.databinding.ActivityPersonalBinding
 
