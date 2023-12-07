@@ -81,7 +81,9 @@
                 android:layout_marginBottom="12dp"/>
 
             <RadioGroup
-                android:id="@+id/role"
+
+                android:id="@+id/radioGroup"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -91,29 +93,47 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:button="@android:color/transparent"
-                    android:text="Personal"
+                    android:text="Personal\n"
                     style="@style/Heading6"
                     android:textColor="@drawable/radio_button_text_selector"
                     android:paddingHorizontal="20dp"
                     android:paddingTop="16dp"
-                    android:paddingBottom="18dp"
+                    android:paddingBottom="16dp"
                     android:drawableEnd="@drawable/radio_button_selector"
-                    android:background="@drawable/radio_button_bg_selector"
-                    android:layout_marginBottom="8dp"/>
+                    android:background="@drawable/radio_button_bg_selector"/>
+
+                <TextView
+                    android:id="@+id/textViewPersonal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="For personal use only"
+                    android:textColor="@color/textSecondary"
+                    android:paddingHorizontal="20dp"
+                    android:layout_marginTop="-40dp"
+                    android:layout_marginBottom="28dp"/>
 
                 <RadioButton
                     android:id="@+id/companyRadioButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:button="@android:color/transparent"
-                    android:text="Company"
+                    android:text="Company\n"
                     style="@style/Heading6"
                     android:textColor="@drawable/radio_button_text_selector"
                     android:paddingHorizontal="20dp"
                     android:paddingTop="16dp"
-                    android:paddingBottom="18dp"
+                    android:paddingBottom="16dp"
                     android:drawableEnd="@drawable/radio_button_selector"
                     android:background="@drawable/radio_button_bg_selector"/>
+
+                <TextView
+                    android:id="@+id/textViewCompany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To control company employees"
+                    android:textColor="@color/textSecondary"
+                    android:paddingHorizontal="20dp"
+                    android:layout_marginTop="-40dp"/>
 
             </RadioGroup>
 

@@ -119,4 +119,28 @@
         <item name="android:textColorHighlight">@color/primary20</item>
         <item name="android:textCursorDrawable">@drawable/caret_color</item>
     </style>
+    <style name="EditTextSearchStyle">
+        <item name="android:fontFamily">@font/sf_pro_text_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineHeight">24sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/edit_text_search</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:drawableTint">@color/textSecondary</item>
+        <item name="android:paddingVertical">8dp</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:textColorHint">@color/textTertiary</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:textColorHighlight">@color/primary20</item>
+        <item name="android:textCursorDrawable">@drawable/caret_color</item>
+    </style>
+
+    <!--  Bottom Sheet  -->
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
 </resources>
