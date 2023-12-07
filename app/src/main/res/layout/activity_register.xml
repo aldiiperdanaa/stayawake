@@ -34,20 +34,20 @@
 
     <LinearLayout
         android:id="@+id/label_password"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="20dp">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_password"
             style="@style/TextExtraSmall_Regular"
             android:textColor="@color/textPrimary"/>
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_required"
             style="@style/TextExtraSmall_Regular"
@@ -55,6 +55,8 @@
     </LinearLayout>
 
     <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/passwordInput"
         style="@style/EditTextStyle"
         android:drawableStart="@drawable/ic_lock"
@@ -78,20 +80,20 @@
 
     <LinearLayout
         android:id="@+id/label_password_confirmation"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/passwordInput"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="20dp">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_password_confirmation"
             style="@style/TextExtraSmall_Regular"
             android:textColor="@color/textPrimary"/>
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_required"
             style="@style/TextExtraSmall_Regular"
@@ -99,6 +101,8 @@
     </LinearLayout>
 
     <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/passwordConfirmationInput"
         style="@style/EditTextStyle"
         android:drawableStart="@drawable/ic_lock"

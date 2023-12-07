@@ -81,11 +81,13 @@
                 android:layout_marginBottom="12dp"/>
 
             <RadioGroup
+                android:id="@+id/role"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <RadioButton
+                    android:id="@+id/personalRadioButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:button="@android:color/transparent"
@@ -100,6 +102,7 @@
                     android:layout_marginBottom="8dp"/>
 
                 <RadioButton
+                    android:id="@+id/companyRadioButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:button="@android:color/transparent"
