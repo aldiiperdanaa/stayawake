@@ -13,9 +13,11 @@ import com.aldiperdana.mobilestayawake.adapter.BusinessFieldListener
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.aldiperdana.mobilestayawake.databinding.ActivityCompanyBinding
 
-class CompanyActivity : AppCompatActivity() {
+class CompanyActivity : AppCompatActivity() , BusinessFieldListener{
 
     private lateinit var binding: ActivityCompanyBinding
+    private var bottomSheetDialog: BottomSheetDialog? = null
+    private var selectedBusinessField: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCompanyBinding.inflate(layoutInflater)
@@ -26,20 +28,12 @@ class CompanyActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val businessFieldInput: TextView = findViewById(R.id.businessFieldInput)
+        businessFieldInput.setOnClickListener {
+            bottomSheetBusinessField()
+        }
+    }
 
-        class CompanyActivity : AppCompatActivity(), BusinessFieldListener {
-            private var bottomSheetDialog: BottomSheetDialog? = null
-            private var selectedBusinessField: String? = null
-
-            override fun onCreate(savedInstanceState: Bundle?) {
-                super.onCreate(savedInstanceState)
-                setContentView(R.layout.activity_company)
-
-                val businessFieldInput: TextView = findViewById(R.id.businessFieldInput)
-                businessFieldInput.setOnClickListener {
-                    bottomSheetBusinessField()
-                }
-            }
 
             private fun bottomSheetBusinessField() {
                 val bottomSheet: View =
@@ -77,5 +71,3 @@ class CompanyActivity : AppCompatActivity() {
                 )
             }
         }
-    }
-}
