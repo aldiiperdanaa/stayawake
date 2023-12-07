@@ -14,7 +14,7 @@ class OnboardingScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnGetStarted.setOnClickListener{
-            val intent = Intent(this, LiveActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

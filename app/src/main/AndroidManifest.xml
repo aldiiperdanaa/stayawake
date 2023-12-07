@@ -43,7 +43,9 @@
             android:exported="false" />
         <activity
             android:name=".ui.LiveActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:configChanges="orientation|screenSize"
+        />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">

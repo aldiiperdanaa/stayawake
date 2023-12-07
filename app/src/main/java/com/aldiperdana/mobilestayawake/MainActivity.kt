@@ -13,12 +13,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
-
-        binding.startLive.setOnClickListener {
-            val serviceIntent = Intent(this, LiveActivity::class.java)
-            startService(serviceIntent)
+        val startLiveButton: FloatingActionButton = binding.startLive
+        startLiveButton.setOnClickListener {
+            val intent = Intent(this, LiveActivity::class.java)
+            startActivity(intent)
         }
     }
 }
