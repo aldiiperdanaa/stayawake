@@ -1,10 +1,10 @@
-import cv2
 import os
-from keras.models import load_model
-import numpy as np
+import cv2
 import pygame
-from pygame import mixer
+import numpy as np
 import streamlit as st
+from pygame import mixer
+from keras.models import load_model
 
 
 pygame.init()
