@@ -50,14 +50,15 @@
             app:drawableStartCompat="@drawable/ic_information_fill"
             android:layout_marginTop="8dp"/>
 
-        <Button
+        <android.widget.Button
             android:id="@+id/btn_continue"
             style="@style/TextBase_SemiBold"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="44dp"
             android:background="@drawable/button_primary"
             android:outlineProvider="none"
             android:text="@string/verify_button"
+            android:paddingHorizontal="16dp"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:letterSpacing="0"

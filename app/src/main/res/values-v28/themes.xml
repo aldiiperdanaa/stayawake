@@ -143,4 +143,11 @@
     <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
     </style>
+
+    <!--  AppBar Title  -->
+    <style name="AppBarTitle">
+        <item name="android:fontFamily">@font/sf_pro_text_medium</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineHeight">28sp</item>
+    </style>
 </resources>

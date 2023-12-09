@@ -12,8 +12,15 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnContinue.setOnClickListener{
-            val intent = Intent(this, LoginRegisterActivity::class.java)
+        setSupportActionBar(binding.topAppBar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        binding.topAppBar.setNavigationOnClickListener {
+            onBackPressed()
+        }
+
+        binding.btnRegister.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

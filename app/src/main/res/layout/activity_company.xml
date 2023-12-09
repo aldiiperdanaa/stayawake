@@ -1,233 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:background="@color/backgroundSecondary"
-    android:padding="16dp"
-    tools:context=".PersonalActivity">
+    tools:context=".CompanyActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
-        <!--    COMPANY LOGO    -->
-        <TextView
-            android:layout_width="wrap_content"
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/label_company_logo"
-            style="@style/TextExtraSmall_Regular"
-            android:textColor="@color/textPrimary"
-            android:layout_marginBottom="12dp"/>
+            android:outlineProvider="none">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="8dp"
+                android:layout_gravity="center"
+                app:title="Company"
+                app:titleTextAppearance="@style/AppBarTitle"
+                android:background="@color/backgroundSecondary"
+                app:navigationIconTint="@color/textSecondary"
+                app:contentInsetStartWithNavigation="0dp"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                app:cardBackgroundColor="@android:color/transparent"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp"
-                android:layout_marginEnd="16dp">
-                <ImageView
-                    android:id="@+id/iv_preview"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/image_placeholder"
-                    android:background="@drawable/background_company_logo"
-                    android:scaleType="centerCrop" />
-            </androidx.cardview.widget.CardView>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="16dp">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="8dp">
-                    <android.widget.Button
-                        android:id="@+id/btn_changeCompanyLogo"
-                        style="@style/TextSmall_SemiBold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="38dp"
-                        android:background="@drawable/button_primary"
-                        android:outlineProvider="none"
-                        android:text="@string/change_button"
-                        android:paddingHorizontal="16dp"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        android:letterSpacing="0"
-                        android:layout_marginEnd="8dp"/>
-
-                    <android.widget.Button
-                        android:id="@+id/btn_deleteCompanyLogo"
-                        style="@style/TextSmall_SemiBold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="38dp"
-                        android:background="@drawable/button_warning"
-                        android:outlineProvider="none"
-                        android:text="@string/delete_button"
-                        android:paddingHorizontal="16dp"
-                        android:textAllCaps="false"
-                        android:textColor="@color/negativeBase"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        android:letterSpacing="0"/>
-                </LinearLayout>
-
-                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Images must be 1:1 aspect ratio with PNG/JPG/JPEG files"
-                    style="@style/TextExtraSmall_Regular"
-                    android:textColor="@color/textSecondary"/>
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            </LinearLayout>
+                    <!--    COMPANY LOGO    -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_company_logo"
+                        style="@style/TextExtraSmall_Regular"
+                        android:textColor="@color/textPrimary"
+                        android:layout_marginBottom="12dp"/>
 
-        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="20dp">
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView"
+                            android:layout_width="96dp"
+                            android:layout_height="96dp"
+                            app:cardBackgroundColor="@color/backgroundPrimary"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            android:layout_marginEnd="16dp">
+                            <ImageView
+                                android:id="@+id/iv_preview"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/company_placeholder"
+                                android:scaleType="centerCrop" />
+                        </androidx.cardview.widget.CardView>
 
-        <!--    COMPANY NAME    -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_company_name"
-                style="@style/TextExtraSmall_Regular"
-                android:textColor="@color/textPrimary"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_required"
-                style="@style/TextExtraSmall_Regular"
-                android:textColor="@color/negativeBase"/>
-        </LinearLayout>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/companyNameInput"
-            style="@style/EditTextStyle"
-            android:drawableStart="@drawable/ic_company"
-            android:hint="@string/hint_input_company_name"
-            android:inputType="text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="20dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
-        <!--    BUSINESS FIELD    -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="8dp">
+                                <android.widget.Button
+                                    android:id="@+id/btn_changeCompanyLogo"
+                                    style="@style/TextSmall_SemiBold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="38dp"
+                                    android:background="@drawable/button_primary"
+                                    android:outlineProvider="none"
+                                    android:text="@string/change_button"
+                                    android:paddingHorizontal="16dp"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    android:letterSpacing="0"
+                                    android:layout_marginEnd="8dp"/>
+
+                                <android.widget.Button
+                                    android:id="@+id/btn_deleteCompanyLogo"
+                                    style="@style/TextSmall_SemiBold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="38dp"
+                                    android:background="@drawable/button_warning"
+                                    android:outlineProvider="none"
+                                    android:text="@string/delete_button"
+                                    android:paddingHorizontal="16dp"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/negativeBase"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    android:letterSpacing="0"/>
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Images must be 1:1 aspect ratio with PNG/JPG/JPEG files"
+                                style="@style/TextExtraSmall_Regular"
+                                android:textColor="@color/textSecondary"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!--    COMPANY NAME    -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_company_name"
+                            style="@style/TextExtraSmall_Regular"
+                            android:textColor="@color/textPrimary"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_required"
+                            style="@style/TextExtraSmall_Regular"
+                            android:textColor="@color/negativeBase"/>
+                    </LinearLayout>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/companyNameInput"
+                        style="@style/EditTextStyle"
+                        android:drawableStart="@drawable/ic_company"
+                        android:hint="@string/hint_input_company_name"
+                        android:inputType="text"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginBottom="20dp"/>
+
+                    <!--    BUSINESS FIELD    -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_business_field"
+                            style="@style/TextExtraSmall_Regular"
+                            android:textColor="@color/textPrimary"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_required"
+                            style="@style/TextExtraSmall_Regular"
+                            android:textColor="@color/negativeBase"/>
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/businessFieldInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/EditTextStyle"
+                        android:drawableStart="@drawable/ic_business_field"
+                        android:hint="@string/hint_input_business_field"
+                        android:inputType="text"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:drawableEnd="@drawable/ic_down_fill"
+                        android:layout_marginBottom="20dp"
+                        android:focusable="false"
+                        android:clickable="true"/>
+
+                    <!--    PHONE NUMBER    -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_phone_number"
+                            style="@style/TextExtraSmall_Regular"
+                            android:textColor="@color/textPrimary"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_required"
+                            style="@style/TextExtraSmall_Regular"
+                            android:textColor="@color/negativeBase"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <com.hbb20.CountryCodePicker
+                            android:id="@+id/countryCodePicker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="5dp"
+                            android:layout_marginLeft="-7.5dp"
+                            android:background="@android:color/transparent"
+                            app:ccp_textSize="16sp"
+                            app:ccp_arrowColor="@color/textSecondary"
+                            app:ccp_flagBorderColor="@color/fillPrimary"
+                            app:ccp_defaultNameCode="ID"
+                            app:ccp_showNameCode="false"
+                            app:ccp_showFullName="false"
+                            app:ccpDialog_background="@color/backgroundSecondary"
+                            app:ccpDialog_initialScrollToSelection="true"
+                            app:ccpDialog_showTitle="false"
+                            app:ccpDialog_textColor="@color/textPrimary"
+                            app:ccpDialog_searchEditTextTint="@color/fillPrimary"
+                            app:ccpDialog_fastScroller_handleColor="@color/fillPrimary"
+                            app:ccpDialog_showNameCode="false"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/phoneNumberInput"
+                            style="@style/EditTextStyle"
+                            android:hint="@string/hint_input_phone_number"
+                            android:inputType="number"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <android.widget.Button
+                android:id="@+id/btn_continue"
+                style="@style/TextBase_SemiBold"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/label_business_field"
-                style="@style/TextExtraSmall_Regular"
-                android:textColor="@color/textPrimary"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/label_required"
-                style="@style/TextExtraSmall_Regular"
-                android:textColor="@color/negativeBase"/>
-        </LinearLayout>
+                android:layout_height="44dp"
+                android:background="@drawable/button_primary"
+                android:outlineProvider="none"
+                android:text="@string/continue_button"
+                android:paddingHorizontal="16dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:letterSpacing="0"
+                android:layout_margin="16dp"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/businessFieldInput"
-            style="@style/EditTextStyle"
-            android:drawableStart="@drawable/ic_business_field"
-            android:hint="@string/hint_input_business_field"
-            android:inputType="text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:drawableEnd="@drawable/ic_down_fill"
-            android:layout_marginBottom="20dp"
-            android:focusable="false"
-            android:clickable="true"/>
-
-        <!--    PHONE NUMBER    -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_phone_number"
-                style="@style/TextExtraSmall_Regular"
-                android:textColor="@color/textPrimary"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_required"
-                style="@style/TextExtraSmall_Regular"
-                android:textColor="@color/negativeBase"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <com.hbb20.CountryCodePicker
-                android:id="@+id/countryCodePicker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingVertical="5dp"
-                android:layout_marginLeft="-7.5dp"
-                android:background="@android:color/transparent"
-                app:ccp_textSize="16sp"
-                app:ccp_arrowColor="@color/textSecondary"
-                app:ccp_flagBorderColor="@color/fillPrimary"
-                app:ccp_defaultNameCode="ID"
-                app:ccp_showNameCode="false"
-                app:ccp_showFullName="false"
-                app:ccpDialog_background="@color/backgroundSecondary"
-                app:ccpDialog_initialScrollToSelection="true"
-                app:ccpDialog_showTitle="false"
-                app:ccpDialog_textColor="@color/textPrimary"
-                app:ccpDialog_searchEditTextTint="@color/fillPrimary"
-                app:ccpDialog_fastScroller_handleColor="@color/fillPrimary"
-                app:ccpDialog_showNameCode="false"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/phoneNumberInput"
-                style="@style/EditTextStyle"
-                android:hint="@string/hint_input_phone_number"
-                android:inputType="number"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginBottom="20dp"/>
         </LinearLayout>
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_continue"
-        style="@style/TextBase_SemiBold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_primary"
-        android:outlineProvider="none"
-        android:text="@string/continue_button"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:letterSpacing="0"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

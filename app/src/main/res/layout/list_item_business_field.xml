@@ -7,10 +7,10 @@
     android:layout_height="wrap_content">
 
     <RadioButton
+        android:id="@+id/businessFieldRadioButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/businessFieldRadioButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:button="@android:color/transparent"

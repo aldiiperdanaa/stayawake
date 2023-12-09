@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:paddingVertical="8dp"
             android:layout_gravity="center"
-            android:background="@color/backgroundPrimary"
+            android:background="@color/backgroundSecondary"
             app:menu="@menu/top_menu">
             <ImageView
                 android:src="@drawable/stay_awake_logo"
@@ -29,8 +29,6 @@
                 android:maxHeight="28dp" />
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
-
-    <!--  TEST COMMIT  -->
 
     <FrameLayout
         android:id="@+id/navhost"

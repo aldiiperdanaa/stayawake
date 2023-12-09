@@ -1,140 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginRegisterActivity"
-    android:padding="16dp"
-    android:background="@color/backgroundSecondary">
-
-    <TextView
-        android:id="@+id/textView"
-        style="@style/Heading4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Create a Password"
-        android:textColor="@color/textPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/textView2"/>
-
-    <TextView
-        android:id="@+id/textView2"
-        style="@style/TextBase_Regular"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lastly, create a password with at least 6 letters or numbers."
-        android:textColor="@color/textSecondary"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"/>
+    android:fillViewport="true"
+    android:background="@color/backgroundSecondary"
+    tools:context=".RegisterActivity">
 
     <LinearLayout
-        android:id="@+id/label_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="20dp">
-        <TextView
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/label_password"
-            style="@style/TextExtraSmall_Regular"
-            android:textColor="@color/textPrimary"/>
-        <TextView
+            android:outlineProvider="none">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="8dp"
+                android:layout_gravity="center"
+                app:title="Register"
+                app:titleTextAppearance="@style/AppBarTitle"
+                android:background="@color/backgroundSecondary"
+                app:navigationIconTint="@color/textSecondary"
+                app:contentInsetStartWithNavigation="0dp"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/label_required"
-            style="@style/TextExtraSmall_Regular"
-            android:textColor="@color/negativeBase"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/textView"
+                    style="@style/Heading4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Create a Password"
+                    android:textColor="@color/textPrimary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/textView2"/>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/TextBase_Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lastly, create a password with at least 6 letters or numbers."
+                    android:textColor="@color/textSecondary"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <LinearLayout
+                    android:id="@+id/label_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_password"
+                        style="@style/TextExtraSmall_Regular"
+                        android:textColor="@color/textPrimary"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_required"
+                        style="@style/TextExtraSmall_Regular"
+                        android:textColor="@color/negativeBase"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/passwordInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/EditTextStyle"
+                    android:drawableStart="@drawable/ic_lock"
+                    android:hint="@string/hint_input_password"
+                    android:inputType="textPassword"
+                    app:layout_constraintTop_toBottomOf="@+id/label_password"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:paddingRight="34dp"/>
+
+                <ImageView
+                    android:id="@+id/passwordVisibilityToggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_eye_off"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintTop_toTopOf="@+id/passwordInput"
+                    app:layout_constraintBottom_toBottomOf="@+id/passwordInput"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:tint="@color/textTertiary" />
+
+                <LinearLayout
+                    android:id="@+id/label_password_confirmation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/passwordInput"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_password_confirmation"
+                        style="@style/TextExtraSmall_Regular"
+                        android:textColor="@color/textPrimary"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_required"
+                        style="@style/TextExtraSmall_Regular"
+                        android:textColor="@color/negativeBase"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/passwordConfirmationInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/EditTextStyle"
+                    android:drawableStart="@drawable/ic_lock"
+                    android:hint="@string/hint_input_password_confirmation"
+                    android:inputType="textPassword"
+                    app:layout_constraintTop_toBottomOf="@+id/label_password_confirmation"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:paddingRight="34dp"/>
+
+                <ImageView
+                    android:id="@+id/passwordVisibilityToggle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_eye_off"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintTop_toTopOf="@+id/passwordConfirmationInput"
+                    app:layout_constraintBottom_toBottomOf="@+id/passwordConfirmationInput"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:tint="@color/textTertiary" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <android.widget.Button
+                android:id="@+id/btn_register"
+                style="@style/TextBase_SemiBold"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/button_primary"
+                android:outlineProvider="none"
+                android:text="@string/register_button"
+                android:paddingHorizontal="16dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:layout_margin="16dp"/>
+
+        </LinearLayout>
     </LinearLayout>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/passwordInput"
-        style="@style/EditTextStyle"
-        android:drawableStart="@drawable/ic_lock"
-        android:hint="@string/hint_input_password"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@+id/label_password"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/passwordVisibilityToggle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_eye_off"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintTop_toTopOf="@+id/passwordInput"
-        app:layout_constraintBottom_toBottomOf="@+id/passwordInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@color/textTertiary" />
-
-    <LinearLayout
-        android:id="@+id/label_password_confirmation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInput"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="20dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/label_password_confirmation"
-            style="@style/TextExtraSmall_Regular"
-            android:textColor="@color/textPrimary"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/label_required"
-            style="@style/TextExtraSmall_Regular"
-            android:textColor="@color/negativeBase"/>
-    </LinearLayout>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/passwordConfirmationInput"
-        style="@style/EditTextStyle"
-        android:drawableStart="@drawable/ic_lock"
-        android:hint="@string/hint_input_password_confirmation"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@+id/label_password_confirmation"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/passwordVisibilityToggle2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_eye_off"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintTop_toTopOf="@+id/passwordConfirmationInput"
-        app:layout_constraintBottom_toBottomOf="@+id/passwordConfirmationInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@color/textTertiary" />
-
-    <Button
-        android:id="@+id/btn_continue"
-        style="@style/TextBase_SemiBold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_primary"
-        android:outlineProvider="none"
-        android:text="@string/register_button"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:letterSpacing="0"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

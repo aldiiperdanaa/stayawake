@@ -39,7 +39,7 @@
             android:name=".LoginRegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".OnboardingScreenActivity"
+            android:name=".OnboardingActivity"
             android:exported="false" />
         <activity
             android:name=".ui.LiveActivity"
@@ -47,7 +47,7 @@
             android:configChanges="orientation|screenSize"
         />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
