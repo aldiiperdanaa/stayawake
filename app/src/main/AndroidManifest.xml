@@ -21,6 +21,9 @@
         android:theme="@style/Theme.MobileStayAwake"
         tools:targetApi="31">
         <activity
+            android:name=".RealTimeActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
@@ -43,9 +46,8 @@
             android:exported="false" />
         <activity
             android:name=".ui.LiveActivity"
-            android:exported="true"
             android:configChanges="orientation|screenSize"
-        />
+            android:exported="true" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">
