@@ -53,8 +53,9 @@ def drowsiness_detection(model_path, alarm_sound='models/assets/alarm.wav'):
         #Condition for Close
             if prediction[0][0]>0.30:
                 cv2.putText(frame,"Drowsy",(10,height-20), font, 1,(255,255,255),1,cv2.LINE_AA)
+
                 cv2.putText(frame,'Score:'+str(score),(100,height-20), font, 1,(255,255,255),1,cv2.LINE_AA)
-                score=score+1
+                score = score + 1
                 
                 if(score < 10):
                     try:
@@ -67,6 +68,9 @@ def drowsiness_detection(model_path, alarm_sound='models/assets/alarm.wav'):
                 score = score - 1
                 if (score < 0):
                     score = 0
+                elif (score > 30):
+                    score = 30
+
                 cv2.putText(frame,"Awake",(10,height-20), font, 1,(255,255,255),1,cv2.LINE_AA)
                 
                 cv2.putText(frame,'Score:'+str(score),(100,height-20), font, 1,(255,255,255),1,cv2.LINE_AA)
