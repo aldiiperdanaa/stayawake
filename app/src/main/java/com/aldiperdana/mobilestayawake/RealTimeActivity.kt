@@ -21,11 +21,13 @@ import android.view.Surface
 import android.view.TextureView
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
-import com.aldiperdana.mobilestayawake.ml.SsdMobilenetV11Metadata1
+import com.aldiperdana.mobilestayawake.ml.ModelV2
+import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.common.FileUtil
 import org.tensorflow.lite.support.image.ImageProcessor
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.image.ops.ResizeOp
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 
 class RealTimeActivity : AppCompatActivity() {
     var colors = listOf<Int>(
@@ -51,16 +53,16 @@ class RealTimeActivity : AppCompatActivity() {
     lateinit var handler: Handler
     lateinit var cameraManager: CameraManager
     lateinit var textureView: TextureView
-    lateinit var model: SsdMobilenetV11Metadata1
+    lateinit var model: ModelV2
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_real_time)
         get_permission()
 
         labels = FileUtil.loadLabels(this, "labels.txt")
+        model = ModelV2.newInstance(this)
 
         imageProcessor = ImageProcessor.Builder().add(ResizeOp(300, 300, ResizeOp.ResizeMethod.BILINEAR)).build()
-        model = SsdMobilenetV11Metadata1.newInstance(this)
         val handlerThread = HandlerThread("videoThread")
         handlerThread.start()
         handler = Handler(handlerThread.looper)
@@ -80,48 +82,54 @@ class RealTimeActivity : AppCompatActivity() {
             }
 
             override fun onSurfaceTextureUpdated(p0: SurfaceTexture) {
-                bitmap = textureView.bitmap!!
-                var image = TensorImage.fromBitmap(bitmap)
-                image = imageProcessor.process(image)
+//                bitmap = textureView.bitmap!!
+//                var image = TensorImage.fromBitmap(bitmap)
+//                image = imageProcessor.process(image)
 
-                val outputs = model.process(image)
-                val locations = outputs.locationsAsTensorBuffer.floatArray
-                val classes = outputs.classesAsTensorBuffer.floatArray
-                val scores = outputs.scoresAsTensorBuffer.floatArray
-                val numberOfDetections = outputs.numberOfDetectionsAsTensorBuffer.floatArray
+                val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 300, 300, 3), DataType.FLOAT32)
+//                inputFeature0.loadBuffer(image.buffer)
 
-                var mutable = bitmap.copy(Bitmap.Config.ARGB_8888, true)
-                val canvas = Canvas(mutable)
+                val outputs = model.process(inputFeature0)
+                val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
-                val h = mutable.height
-                val w = mutable.width
+//                val outputs = model.process(image)
+//                val locations = outputs.locationsAsTensorBuffer.floatArray
+//                val classes = outputs.classesAsTensorBuffer.floatArray
+//                val scores = outputs.scoresAsTensorBuffer.floatArray
+//                val numberOfDetections = outputs.numberOfDetectionsAsTensorBuffer.floatArray
+//
+//                var mutable = bitmap.copy(Bitmap.Config.ARGB_8888, true)
+//                val canvas = Canvas(mutable)
+//
+//                val h = mutable.height
+//                val w = mutable.width
+//
+//                paint.textSize = h/15f
+//                paint.strokeWidth = h/85f
+//                var x = 0
+//                scores.forEachIndexed { index, fl ->
+//                    x = index
+//                    x *= 4
+//                    if(fl > 0.5) {
+//                        paint.setColor(colors.get(index))
+//                        paint.style = Paint.Style.STROKE
+//                        canvas.drawRect(
+//                            RectF(
+//                                locations.get(x + 1) * w,
+//                                locations.get(x) * h,
+//                                locations.get(x + 3) * w,
+//                                locations.get(x + 2) * h
+//                            ), paint
+//                        )
+//                        paint.style = Paint.Style.FILL
+//                        canvas.drawText(
+//                            labels.get(classes.get(index).toInt()) + " " + fl.toString(),
+//                            locations.get(x+1)*w,
+//                            locations.get(x)*h, paint)
+//                    }
+//                }
 
-                paint.textSize = h/15f
-                paint.strokeWidth = h/85f
-                var x = 0
-                scores.forEachIndexed { index, fl ->
-                    x = index
-                    x *= 4
-                    if(fl > 0.5) {
-                        paint.setColor(colors.get(index))
-                        paint.style = Paint.Style.STROKE
-                        canvas.drawRect(
-                            RectF(
-                                locations.get(x + 1) * w,
-                                locations.get(x) * h,
-                                locations.get(x + 3) * w,
-                                locations.get(x + 2) * h
-                            ), paint
-                        )
-                        paint.style = Paint.Style.FILL
-                        canvas.drawText(
-                            labels.get(classes.get(index).toInt()) + " " + fl.toString(),
-                            locations.get(x+1)*w,
-                            locations.get(x)*h, paint)
-                    }
-                }
-
-                imageView.setImageBitmap(mutable)
+                imageView.setImageBitmap(bitmap)
             }
         }
 
