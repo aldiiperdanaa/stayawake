@@ -87,4 +87,5 @@ dependencies {
 
     // Data Store
     implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("androidx.room:room-paging:2.4.0-rc01")
 }
