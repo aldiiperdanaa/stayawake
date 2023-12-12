@@ -9,6 +9,8 @@ android {
 
     buildFeatures{
         viewBinding = true
+        buildConfig= true
+        dataBinding = true
     }
     defaultConfig {
         applicationId = "com.aldiperdana.mobilestayawake"
@@ -18,6 +20,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "STAYAWAKE_API", "\"https://stayawake-406914.et.r.appspot.com/\"")
     }
 
     buildTypes {
@@ -67,5 +70,21 @@ dependencies {
 
     //PhoneNumber
     implementation("com.hbb20:ccp:2.5.1")
+    
+    //Networking
+    implementation("com.loopj.android:android-async-http:1.4.9")
 
+    // Retrofit
+    val retrofit_version = "2.9.0"
+    implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+
+    // LifeCycle
+    val lifecycle_version = "2.6.2"
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+
+    // Data Store
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 }
