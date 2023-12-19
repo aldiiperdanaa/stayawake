@@ -3,14 +3,12 @@ package com.aldiperdana.mobilestayawake.response
 import com.google.gson.annotations.SerializedName
 
 data class LoginResponse (
-    @field:SerializedName("loginResult")
-    val loginResult: LoginResult,
-
     @field:SerializedName("message")
     val message: String? = null,
 
     @field:SerializedName("data")
-    val data: String? = null
+    val data: LoginResult,
+
 )
 data class LoginResult (
     @field:SerializedName("id")

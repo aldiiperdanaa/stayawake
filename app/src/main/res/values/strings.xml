@@ -38,4 +38,19 @@
     <string name="hint_input_search_business_field">Search your business field</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+    <string name="login_expression">Welcome to StayAwake</string>
+    <string name="message_login">Akun berhasil masuk</string>
+    <string name="next">Lanjut</string>
+
+    <string name="fail_expression">Login Gagal</string>
+    <string name="invalid_email">Email tidak valid</string>
+
+    <string name="register_success">Daftar Akun Berhasil !</string>
+    <string name="message_create_acc">Akun sudah bisa digunakan,silahkan masuk !</string>
+
+
+
 </resources>

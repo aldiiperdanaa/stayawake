@@ -1,10 +1,12 @@
 package com.aldiperdana.mobilestayawake.data
 
 import com.aldiperdana.mobilestayawake.BuildConfig
+import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 
 
 class ApiConfig {
@@ -20,9 +22,14 @@ class ApiConfig {
                 .addInterceptor(logginInterceptor)
                 .build()
 
+            val gson = GsonBuilder()
+                .setLenient()
+                .create()
+
             val retrofit = Retrofit.Builder()
                 .baseUrl(BuildConfig.STAYAWAKE_API)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build()
 
