@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_bottom_sheet">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/drowsiness_warning"
+            android:adjustViewBounds="true"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/Heading5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Drowsiness Detected"
+                android:textColor="@color/textPrimary"
+                android:textAlignment="center"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/TextBase_Regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You were detected to be drowsy for a while. Please take a break if you feel tired"
+                android:textColor="@color/textSecondary"
+                android:textAlignment="center"
+                android:layout_marginTop="8dp"/>
+
+            <android.widget.Button
+                android:id="@+id/btn_pause"
+                style="@style/TextBase_SemiBold"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/button_primary"
+                android:outlineProvider="none"
+                android:text="Take a break, pause the app"
+                android:paddingHorizontal="16dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:letterSpacing="0"
+                android:layout_marginTop="24dp"/>
+
+            <android.widget.Button
+                android:id="@+id/btn_continue"
+                style="@style/TextBase_SemiBold"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@drawable/button_transparent"
+                android:outlineProvider="none"
+                android:text="Continue"
+                android:paddingHorizontal="16dp"
+                android:textAllCaps="false"
+                android:textColor="@color/textSecondary"
+                android:letterSpacing="0"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

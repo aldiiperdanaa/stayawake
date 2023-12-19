@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.aldiperdana.mobilestayawake.databinding.ActivityMainBinding
 import com.aldiperdana.mobilestayawake.factory.ViewModelFactory
-import com.aldiperdana.mobilestayawake.ui.LiveActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -40,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId) {
                 R.id.navigation_home->replace(HomeFragment())
                 R.id.navigation_history->replace(HistoryFragment())
-                R.id.navigation_community->replace(CommunityFragment())
+                R.id.navigation_article->replace(ArticleFragment())
                 R.id.navigation_profile -> {
                     val intent = Intent(this, ProfileActivity::class.java)
                     startActivity(intent)

@@ -13,9 +13,9 @@
         android:title=""
         android:enabled="false"/>
     <item
-        android:id="@+id/navigation_community"
-        android:title="Community"
-        android:icon="@drawable/ic_community"/>
+        android:id="@+id/navigation_article"
+        android:title="Article"
+        android:icon="@drawable/ic_article"/>
     <item
         android:id="@+id/navigation_profile"
         android:title="Profile"
