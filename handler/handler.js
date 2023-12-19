@@ -4,6 +4,9 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const Company = require('../model/companyModel');
 const jwt = require('jsonwebtoken');
+const Response = require('../model/Response');
+
+
 // const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
 
 // const secretmanagerClient = new SecretManagerServiceClient();
@@ -108,7 +111,8 @@ const login = async (req, res) => {
       const passwordMatch = await bcrypt.compare(password, company.password);
 
       if (passwordMatch) {
-        const createJwtToken = jwt.sign({ id: company._id }, await process.env.KEY);
+        const expiresIn = 3600; // Contoh: token kedaluwarsa dalam 1 jam (3600 detik)
+        const createJwtToken = jwt.sign({ id: company._id }, process.env.KEY, { expiresIn });
         const data = {
           id: company._id,
           name: company.namaCompany,
@@ -122,7 +126,8 @@ const login = async (req, res) => {
       const passwordMatch = await bcrypt.compare(password, user.password);
 
       if (passwordMatch) {
-        const createJwtToken = jwt.sign({ id: user._id }, await process.env.KEY);
+        const expiresIn = 3600; // Contoh: token kedaluwarsa dalam 1 jam (3600 detik)
+        const createJwtToken = jwt.sign({ id: user._id }, process.env.KEY, { expiresIn });
         const data = {
           id: user._id,
           name: user.nama,
@@ -141,7 +146,6 @@ const login = async (req, res) => {
   }
 };
 
-
 const getUserbyReferral = async (req, res) => {
   try {
     const kodeReferral = req.params.kodeReferral; // Gantilah ini dengan cara Anda mendapatkan kodeReferral
@@ -155,12 +159,31 @@ const getUserbyReferral = async (req, res) => {
 
     // Gunakan metode pada model Company untuk mendapatkan pengguna dengan kode referral tertentu
     const users = await company.getUsersByReferral();
+    const userData = users.map(user => ({
+      id: user._id,
+      name: user.nama,
+      tempatLahir: user.tempatLahir,
+      tanggalLahir: user.tanggalLahir,
+      golDarah: user.golDarah,
+      jenisKelamin: user.jenisKelamin,
+      pekerjaan: user.pekerjaan,
+      alamat: user.alamat,
+      noTelepon: user.noTelepon,
+      email: user.email,
+      kodeReferral: user.kodeReferral,
+    }));
 
-    res.status(200).json({ message: 'Data pengguna ditemukan', users });
+    res.status(200).json({ message: 'Data pengguna ditemukan', userData });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Terjadi kesalahan' });
   }
+};
+
+const getAccount = async (req, res) => {
+  const account = req.currentUser;
+  const response = new Response.Success(false, 'success', account);
+  res.json(response);
 };
 
 const getAllAccount = async (req, res) => {
@@ -176,14 +199,22 @@ const getAllAccount = async (req, res) => {
       users: users.map(user => ({
         id: user._id,
         name: user.nama,
+        tempatLahir: user.tempatLahir,
+        tanggalLahir: user.tanggalLahir,
+        golDarah: user.golDarah,
+        jenisKelamin: user.jenisKelamin,
+        pekerjaan: user.pekerjaan,
+        alamat: user.alamat,
+        noTelepon: user.noTelepon,
         email: user.email,
-        // Add other user properties as needed
+        kodeReferral: user.kodeReferral
       })),
       companies: companies.map(company => ({
         id: company._id,
         name: company.namaCompany,
-        email: company.email,
-        // Add other company properties as needed
+        bidangCompany: company.bidangCompany,
+        kodeReferral: company.kodeReferral,
+        email: company.email
       })),
     };
 
@@ -193,6 +224,40 @@ const getAllAccount = async (req, res) => {
     res.status(500).json({ message: 'Terjadi kesalahan' });
   }
 };
+
+const getAccountByEmail = async (req, res) => {
+  try {
+    const { email } = req.query;
+
+    const users = await User.find({ email });
+
+    if (users.length === 0) {
+      return res.status(404).json({ message: 'Email tidak ditemukan' });
+    }
+
+    const userData = users.map(user => ({
+      id: user._id,
+      name: user.nama,
+      tempatLahir: user.tempatLahir,
+      tanggalLahir: user.tanggalLahir,
+      golDarah: user.golDarah,
+      jenisKelamin: user.jenisKelamin,
+      pekerjaan: user.pekerjaan,
+      alamat: user.alamat,
+      noTelepon: user.noTelepon,
+      email: user.email,
+      kodeReferral: user.kodeReferral,
+    }));
+
+    res.status(200).json({ message: 'Data pengguna ditemukan', data: userData });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Terjadi kesalahan' });
+  }
+};
+
+
+
 
 
 function generateReferralCode(length = 6) {
@@ -207,4 +272,4 @@ function generateReferralCode(length = 6) {
   return referralCode;
 }
 
-module.exports = { registerCompany, registerUser, login, getUserbyReferral, getAllAccount };
+module.exports = { registerCompany, registerUser, login, getUserbyReferral, getAccount, getAllAccount, getAccountByEmail };
