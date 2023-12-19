@@ -3,9 +3,9 @@ package com.aldiperdana.mobilestayawake.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
-import com.aldiperdana.mobilestayawake.helper.ResultState
-import com.aldiperdana.mobilestayawake.repository.UserRepository
-import com.aldiperdana.mobilestayawake.response.RegisterResponse
+import com.aldiperdana.mobilestayawake.util.ResultState
+import com.aldiperdana.mobilestayawake.data.repository.UserRepository
+import com.aldiperdana.mobilestayawake.data.api.response.RegisterResponse
 import java.util.Date
 
 class RegisterViewModel (private val userRepository: UserRepository): ViewModel() {

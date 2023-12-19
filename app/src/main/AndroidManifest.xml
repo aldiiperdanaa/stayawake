@@ -23,43 +23,43 @@
         android:theme="@style/Theme.MobileStayAwake"
         tools:targetApi="31">
         <activity
-            android:name=".ProfileActivity"
+            android:name=".ui.activity.ProfileActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".ui.activity.RegisterActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".CompanyActivity"
+            android:name=".ui.activity.CompanyActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".PersonalActivity"
+            android:name=".ui.activity.PersonalActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".NewUserActivity"
+            android:name=".ui.activity.NewUserActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.activity.LoginActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".LoginRegisterActivity"
+            android:name=".ui.activity.LoginRegisterActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".OnboardingActivity"
+            android:name=".ui.activity.OnboardingActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".LiveActivity"
+            android:name=".ui.activity.LiveActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.activity.SplashActivity"
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
@@ -69,7 +69,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
     </application>

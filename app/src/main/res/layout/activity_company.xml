@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:background="@color/backgroundSecondary"
-    tools:context=".CompanyActivity">
+    tools:context=".ui.activity.CompanyActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

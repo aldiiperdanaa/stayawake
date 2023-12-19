@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:background="@color/backgroundSecondary"
-    tools:context=".OnboardingActivity">
+    tools:context=".ui.activity.OnboardingActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
