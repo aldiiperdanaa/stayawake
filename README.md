@@ -2,7 +2,7 @@
 	<img src="https://source.android.com/static/docs/setup/images/Android_symbol_green_RGB.svg" width="256" />
 	<h3 align="center">StayAwake</h3>
 	<p align="center">
-		-----------------------------------------------------
+		<br>
 	</p>
 </div>
 
@@ -24,9 +24,10 @@ Hi everyone! We are from team C23-PS185. We consist of 6 people and these are ou
 ## Theme 
 Sustainable Living 
 
-##App
+## App
 
-##Demo
+## Demo
+|--|--|--|
 [![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](https://youtu.be/c3nM1swCJRQ)
 
 
