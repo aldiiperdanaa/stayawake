@@ -1,5 +1,5 @@
 <div align="center">
-	<img src="https://source.android.com/static/docs/setup/images/Android_symbol_green_RGB.svg" width="256" />
+	<img src="[https://github.com/aldiiperdanaa/stayawake/blob/master/LogoStayAwake.png]" width="256" />
 	<h3 align="center">StayAwake</h3>
 	<p align="center">
 		<br>
@@ -9,7 +9,7 @@
 ## Introduction 👋
 **Team ID: CH2-PS276**
 
-Hi everyone! We are from team C23-PS185. We consist of 6 people and these are our team members:
+Hi everyone! We are from team C23-PS185. We consist of 7 people and these are our team members:
 
 |Name|Bangkit ID|Learning Path|
 |--|--|--|
@@ -27,8 +27,10 @@ Sustainable Living
 ## App
 
 ## Demo
-|--|--|--|
-[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](https://youtu.be/c3nM1swCJRQ)
+<div align="center">
+	[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](https://youtu.be/c3nM1swCJRQ)
+</div>
+
 
 
 
