@@ -1,5 +1,5 @@
 <div align="center">
-	<img src="https://github.com/aldiiperdanaa/stayawake/blob/master/LogoStayAwake.png" width="256" />
+	<img src="https://github.com/aldiiperdanaa/stayawake/blob/master/LogoStayAwake.png" width="128" />
 	<h3 align="center">StayAwake</h3>
 	<p align="center">
 		<br>
