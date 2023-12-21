@@ -58,6 +58,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, LiveActivity::class.java)
             startActivity(intent)
         }
+
+        val fragmentToLoad = intent.getStringExtra("fragmentToLoad")
+        if (fragmentToLoad == "history") {
+            replace(HistoryFragment())
+            bottomNavigation.selectedItemId = R.id.navigation_history
+        }
     }
 
     private fun replace(fragment: Fragment) {

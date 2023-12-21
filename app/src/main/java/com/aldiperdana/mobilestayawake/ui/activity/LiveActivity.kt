@@ -3,6 +3,7 @@ package com.aldiperdana.mobilestayawake.ui.activity
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.RectF
@@ -27,6 +28,8 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
+import com.aldiperdana.mobilestayawake.data.model.HistoryModel
+import com.aldiperdana.mobilestayawake.helper.HistoryDatabaseHelper
 import com.aldiperdana.mobilestayawake.R
 import com.aldiperdana.mobilestayawake.databinding.ActivityLiveBinding
 import com.aldiperdana.mobilestayawake.helper.LiveDetectionHelper
@@ -41,6 +44,9 @@ import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.image.ops.ResizeOp
 import org.tensorflow.lite.support.image.ops.ResizeWithCropOrPadOp
 import org.tensorflow.lite.support.image.ops.Rot90Op
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 import kotlin.math.min
@@ -50,6 +56,8 @@ class LiveActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLiveBinding
     private lateinit var bitmapBuffer: Bitmap
+
+    private lateinit var db: HistoryDatabaseHelper
 
     private val executor = Executors.newSingleThreadExecutor()
     private val permissions = listOf(Manifest.permission.CAMERA)
@@ -100,8 +108,11 @@ class LiveActivity : AppCompatActivity() {
     private val tfInputSize by lazy {
         val inputIndex = 0
         val inputShape = tflite.getInputTensor(inputIndex).shape()
-        Size(inputShape[2], inputShape[1]) // Order of axis is: {1, height, width, 3}
+        Size(inputShape[2], inputShape[1])
     }
+
+    private var start_time: String = ""
+    private var finish_time: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -117,6 +128,7 @@ class LiveActivity : AppCompatActivity() {
         }
 
         binding.btnStart.setOnClickListener {
+            start_time = getCurrentDateTime()
             binding.live.visibility = View.VISIBLE
             binding.unlive.visibility = View.GONE
             pauseAnalysis = false
@@ -139,7 +151,27 @@ class LiveActivity : AppCompatActivity() {
             }
         }
 
-        binding.btnStop.setOnClickListener {}
+        db = HistoryDatabaseHelper(this)
+        binding.btnStop.setOnClickListener {
+            finish_time = getCurrentDateTime()
+            val title = "RECORD_${getCurrentDateTime()}"
+            val duration = binding.time.text.toString()
+            val history = HistoryModel(0, title, start_time, finish_time, duration)
+            db.insertHistory(history)
+
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("fragmentToLoad", "history") // Kirim data ke MainActivity untuk menentukan fragment yang akan dimuat
+            startActivity(intent)
+
+
+            Toast.makeText(this, "History saved successfully", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun getCurrentDateTime(): String {
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+        val currentDate = Date()
+        return dateFormat.format(currentDate)
     }
 
     private fun startTimer() {

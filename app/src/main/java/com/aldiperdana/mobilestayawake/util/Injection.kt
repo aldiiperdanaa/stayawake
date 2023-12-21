@@ -3,8 +3,8 @@ package com.aldiperdana.mobilestayawake.util
 import android.content.Context
 import com.aldiperdana.mobilestayawake.data.api.ApiConfig
 import com.aldiperdana.mobilestayawake.data.repository.UserRepository
-import com.aldiperdana.preference.UserPreference
-import com.aldiperdana.preference.dataStore
+import com.aldiperdana.mobilestayawake.preference.UserPreference
+import com.aldiperdana.mobilestayawake.preference.dataStore
 
 object Injection {
 

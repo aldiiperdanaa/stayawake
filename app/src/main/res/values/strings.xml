@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">StayAwake</string>
+    <string name="app_name">stayAwake</string>
     <string name="get_started_button">Get Started</string>
     <string name="terms_and_privacy">By continuing, you agree to our Terms of Service\nand Privacy Policy</string>
     <string name="continue_button">Continue</string>

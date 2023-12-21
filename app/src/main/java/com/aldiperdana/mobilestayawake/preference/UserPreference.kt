@@ -1,4 +1,4 @@
-package com.aldiperdana.preference
+package com.aldiperdana.mobilestayawake.preference
 
 import android.content.Context
 import androidx.datastore.core.DataStore

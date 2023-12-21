@@ -87,7 +87,7 @@
                     style="@style/TextBase_Regular"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Lorem, ipsum dolor sit amet consectetur adipiscing elit. Illo, temporibus."
+                    android:text="Don't let drowsiness close the curtain on your safety. A little caution, a million safety!"
                     android:textAlignment="center"
                     android:textColor="@color/textSecondary" />
             </LinearLayout>

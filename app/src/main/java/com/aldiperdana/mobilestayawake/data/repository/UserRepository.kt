@@ -7,7 +7,7 @@ import com.aldiperdana.mobilestayawake.util.ResultState
 import com.aldiperdana.mobilestayawake.data.model.UserModel
 import com.aldiperdana.mobilestayawake.data.api.response.LoginResponse
 import com.aldiperdana.mobilestayawake.data.api.response.RegisterResponse
-import com.aldiperdana.preference.UserPreference
+import com.aldiperdana.mobilestayawake.preference.UserPreference
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
