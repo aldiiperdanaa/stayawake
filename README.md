@@ -25,6 +25,7 @@ Hi everyone! We are from team C23-PS185. We consist of 7 people and these are ou
 Sustainable Living 
 
 ## App
+![14](https://github.com/aldiiperdanaa/stayawake/assets/99483981/39c68bd9-28bf-4fdc-9ee0-684f59a10c70)
 
 ## Demo
 [![WATCH THE DEMO](https://img.youtube.com/vi/c3nM1swCJRQ/0.jpg)](https://youtu.be/c3nM1swCJRQ)
