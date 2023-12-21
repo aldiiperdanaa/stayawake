@@ -28,7 +28,9 @@ Sustainable Living
 
 ## Demo
 <div align="center">
-	[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](https://youtu.be/c3nM1swCJRQ)
+<video width="320" height="240" controls>
+	<source src="https://youtu.be/c3nM1swCJRQ" >
+</video>
 </div>
 
 
