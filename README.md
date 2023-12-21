@@ -27,9 +27,7 @@ Sustainable Living
 ## App
 
 ## Demo
-<div align="center">
-  <video src="https://youtu.be/c3nM1swCJRQ" width="400"/>
-</div>
+[![WATCH THE DEMO](https://img.youtube.com/vi/c3nM1swCJRQ/0.jpg)](https://youtu.be/c3nM1swCJRQ)
 
 
 
