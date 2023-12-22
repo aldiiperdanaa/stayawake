@@ -13,13 +13,13 @@ Hi everyone! We are from team C23-PS185. We consist of 7 people and these are ou
 
 |Name|Bangkit ID|Learning Path|
 |--|--|--|
-|Ahmad Zaki Firdaus|Machine Learning|M008BSY0038|
-|Samuel Budi Satrio|Machine Learning|M008BSY0315|
-|Vincent Yeozekiel|Machine Learning|M008BSY1786|
-|Angga Restu Aji|Cloud Computing|C391BSY3460|
-|Hizkia Pratama|Cloud Computing|C391BSY3901|
-|Bintang Nasution|Mobile Development|A159BSY2178|
-|Aldi Perdana Asri|Mobile Development|A438BKY4487|
+|Ahmad Zaki Firdaus|M008BSY0038|Machine Learning|
+|Samuel Budi Satrio|M008BSY0315|Machine Learning|
+|Vincent Yeozekiel|M008BSY1786|Machine Learning|
+|Angga Restu Aji|C391BSY3460|Cloud Computing|
+|Hizkia Pratama|C391BSY3901|Cloud Computing|
+|Bintang Nasution|A159BSY2178|Mobile Development|
+|Aldi Perdana Asri|A438BKY4487|Mobile Development|
 
 ## Theme 
 Sustainable Living 
