@@ -64,6 +64,7 @@ In our project is divided into four branches:
 
 ## App
 ![App Picture](https://github.com/aldiiperdanaa/stayawake/assets/99483981/13bd627f-35aa-4949-8458-b2e8307cb5d1)
+The app can be downloaded here: [StayAwake](https://drive.google.com/drive/folders/11waweoCzdbbfSqTjflQxZxTxvtMDVoU7)
 
 ## Demo
 [![WATCH THE DEMO](https://img.youtube.com/vi/c3nM1swCJRQ/0.jpg)](https://youtu.be/c3nM1swCJRQ)
