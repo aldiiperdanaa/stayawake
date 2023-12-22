@@ -55,7 +55,7 @@ How can we reduce traffic accidents caused by drowsiness by applying machine lea
   - TensorFlow Lite: Mobile library for deploying models on mobile
 
 ## Repository Branches
-In our project is divided into four branches:
+In our project is divided into 3 branches:
   - [Machine Learning](https://github.com/aldiiperdanaa/stayawake/tree/Fixed_MachineLearning)
   - [Cloud Computing](https://github.com/aldiiperdanaa/stayawake/tree/Cloud-Computing)
   - [Mobile Development](https://github.com/aldiiperdanaa/stayawake/tree/master)
